@@ -1,0 +1,31 @@
+int main() {
+    FileSystem fs;
+
+    fs.mkdir("dir1");
+    fs.mkdir("dir2");
+    fs.touch("file1", "Content of file1.");
+    fs.touch("file2", "Content of file2.");
+    
+    // Navegar a dir1 y crear subdirectorios y archivos
+    fs.cd("dir1");
+    fs.mkdir("subdir1");
+    fs.mkdir("subdir2");
+    fs.touch("file3", "Content of file3 in dir1.");
+    fs.cd("subdir1");
+    fs.touch("file4", "Content of file4 in subdir1.");
+    fs.cd("..");
+    fs.cd("subdir2");
+    fs.touch("file5", "Content of file5 in subdir2.");
+    fs.cd("/");
+    
+    // Navegar a dir2 y crear subdirectorios y archivos
+    fs.cd("dir2");
+    fs.mkdir("subdir3");
+    fs.touch("file6", "Content of file6 in dir2.");
+    fs.cd("subdir3");
+    fs.touch("file7", "Content of file7 in subdir3.");
+    fs.cd("/");
+
+    fs.prompt();
+    return 0;
+}

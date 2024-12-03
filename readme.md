@@ -1,0 +1,51 @@
+## Estructura del Sistema de Archivos
+
+- **INode**: Representa un nodo en el sistema de archivos. Puede ser un archivo o un directorio.
+  - `name`: Nombre del archivo o directorio.
+  - `isDirectory`: Indica si el nodo es un directorio.
+  - `size`: Tamaño del archivo (0 para directorios).
+  - `permissions`: Permisos del archivo o directorio (en formato octal).
+  - `creationTime`: Hora de creación del nodo.
+  - `content`: Contenido del archivo (vacío para directorios).
+  - `children`: Hijos del directorio (vacío para archivos).
+  - `parent`: Puntero al nodo padre (nullptr para el nodo raíz).
+
+## Funcionalidades del Sistema de Archivos
+
+- **touch**: Crea un archivo con contenido.
+  - Uso: `touch <nombre> <contenido>`
+- **mkdir**: Crea un directorio.
+  - Uso: `mkdir <nombre>`
+- **mv**: Renombra un archivo o directorio.
+  - Uso: `mv <nombre_antiguo> <nombre_nuevo>`
+- **rm**: Elimina un archivo o directorio.
+  - Uso: `rm <nombre>`
+- **ls**: Lista los archivos y directorios en el directorio actual.
+  - Uso: `ls`
+  - Uso recursivo: `ls -R`
+- **cd**: Cambia el directorio actual.
+  - Uso: `cd <nombre>`
+  - Uso para volver al directorio padre: `cd ..`
+- **chmod**: Cambia los permisos de un archivo o directorio. Los permisos se especifican en formato octal (por ejemplo, 0700).
+  - Uso: `chmod <nombre> <permisos>`
+  - Ejemplo: `chmod archivo.txt 0700` asigna permisos de lectura, escritura y ejecución solo al propietario. `chmod archivo.txt 0100` asigna permisos de ejecución solo al propietario.
+- **find**: Busca archivos o directorios por nombre en el sistema de archivos.
+  - Uso: `find <nombre>`
+- **inode**: Muestra los identificadores y nombres de los inodos en el sistema de archivos.
+  - Uso: `inode`
+- **history**: Muestra el historial de comandos ejecutados.
+  - Uso: `history`
+- **save**: Guarda el estado actual del sistema de archivos en un archivo.
+  - Uso: `save`
+- **load**: Carga el estado del sistema de archivos desde un archivo.
+  - Uso: `load <nombre>`
+- **execute**: Ejecuta un archivo (simulación).
+  - Uso: `execute <nombre>`
+- **search**: Busca archivos o directorios por nombre en el sistema de archivos y muestra sus rutas completas.
+  - Uso: `search <nombre>`
+- **read**: Lee el contenido de un archivo.
+  - Uso: `read <nombre>`
+- **write**: Escribe contenido en un archivo.
+  - Uso: `write <nombre> <contenido>`
+- **run**: Ejecuta un comando desde el historial de comandos.
+  - Uso: `run <índice>`
